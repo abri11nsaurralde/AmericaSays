@@ -3,27 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <img src="America_Says_Logo-removebg-preview.png" alt="(American Says Logo)">
+    <link rel="stylesheet" href="indexStyle.css">
   </head>
   <body>
-    <span><i><h1 ID="question">Question?</h1></i></span>   <!-- use impact font sans-serif -->
+    <!-- sidebar,,,,,,,,,,,,,,,,,,,,, -->
+    <div class="sidebar">
+      <img id="logo" src="America Says Logo.png" alt="(American Says Logo)">
+        <div ID="js_timer">
+          timer:
+          <div ID="timer">
+            00:00
+          </div>
+        </div>
+    </div>
 
-    <div ID="answers">
-
+    <!-- main,,,,,,,,,,,,,,,,,,,,,,,, -->
+    <div class="main">
+      <span ID="questionContent"><i><h1 ID="question"></h1></i></span>   <!-- use impact font sans-serif -->
+      <div ID="answers">
+          <!-- answers go here -->
+      </div>
+      <input type="text" ID="answerBox" placeholder="enter answer here">
+      <button type="button" ID="startButton" onclick="nextQuestion(this)">Start</button>
     </div>
 
     <body onkeypress="enterKey(event);">    </body>
-
-    <input type="text" ID="answerBox" placeholder="enter answer here">
-    <button type="button" ID="startButton" onclick="nextQuestion(this)">Start</button>
-
-<!-- timer:
-<div ID="js_timer">
-  <div ID="timer">
-    00:00
-  </div>
-
-</div> -->
 
     <!-- ////////////////////////////////////// -->
     <script src = "question.js"> </script>

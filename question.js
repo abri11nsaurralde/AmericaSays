@@ -1,4 +1,4 @@
-var questionList = ["My fish loves the what in his aquarium?", "You’ve probably heard someone say “Across the…” what?", "If you work as a what you can bet no 2 days will be exactly alike?"];
+var questionList = ["My fish loves the ____ in his aquarium?", "You’ve probably heard someone say “Across the ____”", "If you work as a ____ you can bet no two days will be exactly alike?"];
 var answerList =
 ["Treasure Chest, Castle, Bubbles, Plants, Gravel, Diver, Cave",
 "Street, Line, Way, Universe, Board, Room",
@@ -99,10 +99,10 @@ function nextQuestion() {
           emptyAnswer = emptyAnswer + "_"
           }
 
-          var newDiv = document.createElement("div");
-          newDiv.innerText = emptyAnswer;
-          newDiv.id = "answer" + answerNumber;
-          document.getElementById("answers").appendChild(newDiv);
+          var newSpan = document.createElement("span");
+          newSpan.innerText = emptyAnswer;
+          newSpan.id = "answer" + answerNumber;
+          document.getElementById("answers").appendChild(newSpan);
 
       } else {
         letter = indivAnswerSg[0].charAt(0);
@@ -111,10 +111,10 @@ function nextQuestion() {
           for (let i = 0; i < lineLength; i++) {
           emptyAnswer = emptyAnswer + "_";
           }
-          var newDiv = document.createElement("div");
-          newDiv.innerText = emptyAnswer;
-          newDiv.id = "answer" + answerNumber;
-          document.getElementById("answers").appendChild(newDiv);
+          var newSpan = document.createElement("Span");
+          newSpan.innerText = emptyAnswer;
+          newSpan.id = "answer" + answerNumber;
+          document.getElementById("answers").appendChild(newSpan);
       }
       answerNumber = answerNumber + 1;
     }
