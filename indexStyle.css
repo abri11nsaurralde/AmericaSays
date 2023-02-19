@@ -1,0 +1,117 @@
+/* links: https://rgbacolorpicker.com/
+  font: https://www.cssfontstack.com/Impact
+    https://www.fontsquirrel.com/tools/webfont-generator
+ */
+
+ @font-face {
+     font-family: 'truenoextrabold_italic';
+     /* src: url('/https://abri11nsaurralde.github.io/AmericaSays/css/fonts/truenoexbdit.woff2') format('woff2'),
+          url('/https://abri11nsaurralde.github.io/AmericaSays/css/fonts/truenoexbdit.woff') format('woff'); */
+    src: url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno extra bold italic/truenoexbdit.woff2') format('woff2'),
+         url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno extra bold italic/truenoexbdit.woff') format('woff');
+     /* font-weight: normal;
+     font-style: normal; */
+
+ }
+
+ @font-face {
+     font-family: 'truenoblack';
+     src: url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno black/truenoblk.woff2') format('woff2'),
+          url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno black/truenoblk.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+body {
+    background: rgba(55,98,236,255);
+    padding: 50px 20px;
+}
+
+.sidebar {
+  /* help: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 320px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: rgba(45, 82, 173, 1); /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+#logo {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+  width: 320px;
+}
+.main {
+  margin-right: 320px;
+}
+
+#question {
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  font-size: 35px;
+  line-height: 50px;
+  color: white;
+  text-shadow: 0px 2px 2px black;
+
+  background-color: rgba(222,30,55,255); /* rgba(221,24,52,255); red */
+  padding: 15px;
+
+  border-style: solid;
+  border-width: 8px;
+  border-color: rgba(255,255,59,255);
+}
+
+input {
+  background-color: rgba(222,30,55,0);
+  border-color: transparent transparent rgba(255,255,255,0.8) transparent;
+  font-size: 30px;
+  color: rgba(255,255,255,0.8);
+}
+
+#answers * {
+ color: white;
+ /* font-family: "TT Norms Pro", sans-serif; */
+ font-family: 'truenoextrabold_italic';
+ /* font-weight: 900; */
+ font-size: 50px;
+ text-shadow: 0px 2px 2px DimGrey;
+ text-transform: uppercase;
+ margin-left: 40px;
+ margin-right: 50px;
+
+}
+
+
+::placeholder {
+  opacity: 1;
+  color: rgba(255,255,255,0.8);
+}
+
+#startButton {
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(255,255,255,0.2);
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+#js_timer {
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  font-size: 50px;
+  color: rgba(255,255,59,255);
+  display: block;
+  text-align: center;
+}
+
+head {
+  padding: 50px 20px;
+}
