@@ -20,55 +20,14 @@ var lowerCase;
 var upperCase;
 var upperThenLowercase;
 
+// ---timer variables---
 var sec;
 var timer;
 var timerElement = document.getElementById("timer");
 
-// function start(){
-//   // resetTimer();
-//   sec = 1;
-//   timer = setInterval(() =>
-//   { if (sec < 15) {
-//       if (sec < 10) {
-//         timerElement.innerText = "00:0" + sec;
-//       } else {
-//         timerElement.innerText = "00:" + sec;
-//         }
-//     sec ++;
-//   } else if (se) {
-//
-//   }{
-//     sec = 1;
-//     nextQuestion();
-//   }
-//   }, 1000);
-//   // alert("moving on...");
-//   // if (sec == ) {
-//   //
-//   // }
-//
-// }
-//
-// function updateTime() {
-//     if (sec < 15) {
-//       if (sec < 10) {
-//         timerElement.innerText = "00:0" + sec;
-//       } else {
-//         timerElement.innerText = "00:" + sec;
-//       }
-//       sec ++;
-//     } else {
-//       sec = 1;
-//       nextQuestion();
-//     }
-//     // else if (sec <= 60) {
-//     //
-//     // }
-// }
-
-// setInterval(()=> {
-
-// }
+function start () {
+  timerFunction5Start();
+}
 
 function nextQuestion() {
   answerNumber = 0; // resets the value added to the end of an answer's ID
@@ -124,24 +83,6 @@ function nextQuestion() {
   var usedAnswers = answerList.splice(random, 1);
 }
 
-function enterKey(e) { // checks if the return key was pressed
-  keyPressed = e.charCode;
-  if (keyPressed == 13) {
-    inputElement = document.getElementById("answerBox");
-    input = document.getElementById("answerBox").value;
-    for (let i = 0; i < indivAnswers.length; i++) {
-      lowerCase = makeLowercase(indivAnswers[i]);
-      upperCase = makeUppercase(indivAnswers[i]);
-      upperThenLowercase = makeEverythingButFirstLetterLowercase(indivAnswers[i])
-
-      if (input == indivAnswers[i] || input == lowerCase || input == indivAnswers[i] + " " || input == lowerCase + " " || input == upperCase || input == upperCase + " " || input == upperThenLowercase || input == upperThenLowercase + " ") {
-        document.getElementById("answer" + i).innerText = indivAnswers[i]; // changes the answer
-      }
-    }
-    document.getElementById("answerBox").value = "";
-  }
-}
-
 function makeLowercase(answer) {
 lowerCase = answer.toLowerCase();
 return lowerCase;
@@ -160,8 +101,105 @@ var everythingButTheFirstLetterIsLowercase = letter + everythingButFirstLetterMa
 return everythingButTheFirstLetterIsLowercase;
 }
 
+
+//----------timer functions---------------
+
+function startTimer(){
+  // 5 second warning screen, first team gets 30 seconds, 5 second warning screen, then next team gets 30 seconds
+  timerFunction5();
+}
+
+function timerFunction5Start () {
+  sec = 5;
+  timer = setInterval(() =>
+  { if (sec < 10) {
+      if (sec < 0) {
+        clearInterval(timer);
+        timerFunction30TeamOne();
+        } else {
+          timerElement.innerText = "00:0" + sec;
+        }
+    } else {
+        timerElement.innerText = "00:" + sec;
+        }
+    sec --;
+  }, 1000);
+}
+
+function timerFunction30TeamOne () {
+  nextQuestion();
+  sec = 31;
+  timer = setInterval(() =>
+  { if (sec < 10) {
+      if (sec < 0) {
+        clearInterval(timer);
+          timerFunction5Break();
+        } else {
+          timerElement.innerText = "00:0" + sec;
+        }
+    } else {
+        timerElement.innerText = "00:" + sec;
+        }
+    sec --;
+  }, 1000);
+}
+
+function timerFunction5Break () {
+  sec = 5;
+  timer = setInterval(() =>
+  { if (sec < 10) {
+      if (sec < 0) {
+        clearInterval(timer);
+          timerFunction30TeamTwo();
+        } else {
+          timerElement.innerText = "00:0" + sec;
+        }
+    } else {
+        timerElement.innerText = "00:" + sec;
+        }
+    sec --;
+  }, 1000);
+}
+
+function timerFunction30TeamTwo () {
+  sec = 31;
+  timer = setInterval(() =>
+  { if (sec < 10) {
+      if (sec < 0) {
+        clearInterval(timer);
+          timerFunction5Start(); // goes back to the first timer
+        } else {
+          timerElement.innerText = "00:0" + sec;
+        }
+    } else {
+        timerElement.innerText = "00:" + sec;
+        }
+    sec --;
+  }, 1000);
+}
+
+function checkKey(e) {
+  var keyPressed = e.charCode;
+  if (keyPressed == 92) {
+    clearInterval(timer);
+  } else if (keyPressed == 13) {
+      inputElement = document.getElementById("answerBox");
+      input = document.getElementById("answerBox").value;
+      for (let i = 0; i < indivAnswers.length; i++) {
+        lowerCase = makeLowercase(indivAnswers[i]);
+        upperCase = makeUppercase(indivAnswers[i]);
+        upperThenLowercase = makeEverythingButFirstLetterLowercase(indivAnswers[i])
+
+        if (input == indivAnswers[i] || input == lowerCase || input == indivAnswers[i] + " " || input == lowerCase + " " || input == upperCase || input == upperCase + " " || input == upperThenLowercase || input == upperThenLowercase + " ") {
+          document.getElementById("answer" + i).innerText = indivAnswers[i]; // changes the answer
+        }
+      }
+      document.getElementById("answerBox").value = "";
+  }
+}
+
+
 /* TODO:
-  - timer
+  - screens and popups
   - points system
-  - ughhhhhhhhhhhhhhhhhhhhhhhh (make the css file)
 */

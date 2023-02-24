@@ -24,12 +24,14 @@
           <!-- answers go here -->
       </div>
       <input type="text" ID="answerBox" placeholder="enter answer here">
-      <button type="button" ID="startButton" onclick="nextQuestion(this)">Start</button>
+      <button type="button" ID="startButton" onclick="start(this)">Start</button>
     </div>
 
-    <body onkeypress="enterKey(event);">    </body>
+    <body onkeypress="checkKey(event);">    </body>
+    <!-- <body onkeypress="enterKey(event);">    </body>  -->
 
     <!-- ////////////////////////////////////// -->
     <script src = "question.js"> </script>
+    <!-- <script src = "timer.js"> </script> -->
   </body>
 </html>
