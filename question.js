@@ -404,14 +404,15 @@ function closeModal(modal) {
 
 /* TODO:
   - make font work
-  - end button + popup screen with summary
-    - rounds played
-    - perfect rounds
-    - do you really want to end the game? (NO, yes!)-- really? (im sure, no, thanks for making sure)
+  - upload the right advisory olympics logo
 
   DONE:
  - avoid being able to type in an answer twice
  - show answers at the end
  - end round early
  - change color of missing text
+ - end button + popup screen with summary
+    - rounds played
+    - perfect rounds
+    - do you really want to end the game? (NO, yes!)-- really? (im sure, no, thanks for making sure)
 */
