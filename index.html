@@ -5,16 +5,26 @@
     <title></title>
     <link rel="stylesheet" href="indexStyle.css">
   </head>
+
   <body>
     <!-- sidebar,,,,,,,,,,,,,,,,,,,,, -->
     <div class="sidebar">
       <img id="logo" src="America Says Logo.png" alt="(American Says Logo)">
-        <div ID="js_timer">
-          timer:
-          <div ID="timer">
-            00:00
-          </div>
+      <div ID="main_timer">
+        timer:
+        <div id="timer">
+          00:30
         </div>
+      </div>
+      <div class="pointsSection">
+        <h2 id="pointsTitle">Points: </h2>
+        <div id="teamAPointsLine">
+          <span id="teamAPointName">(teamA):</span> <span id="teamAPoints">0</span>
+        </div>
+        <div id="teamBPointsLine">
+          <span id="teamBPointName">(teamB):</span> <span id="teamBPoints">0</span>
+        </div>
+      </div>
     </div>
 
     <!-- main,,,,,,,,,,,,,,,,,,,,,,,, -->
@@ -24,11 +34,84 @@
           <!-- answers go here -->
       </div>
       <input type="text" ID="answerBox" placeholder="enter answer here">
-      <button type="button" ID="startButton" onclick="start(this)">Start</button>
-    </div>
+
+      <button type="button" ID="endButton" data-modal-target="#modal">end game</button>
+
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div class="title">You are about to end the game</div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            Are you sure?
+          </div>
+          <button id="no-button" style="background-color: #df1e39;">No!!</button>
+          <button id="yes-button" onclick="endScreen(this), closeModal(modal)">Yeah</button>
+        </div>
+        <div id="overlay"></div>
 
     <body onkeypress="checkKey(event);">    </body>
-    <!-- <body onkeypress="enterKey(event);">    </body>  -->
+    </div>
+
+    <!-- splash screens  -------------------------------------->
+    <div id="startSplashScreen">
+      <img id="startScreenAmericaSaysLogo" src="America Says Logo.png" alt="America Says Logo">
+      <h1 id="hostText">Hosted by Mrs. Smith and Mrs. Webb!</h1>
+      <input type="text" ID="teamABox" placeholder="Team A">
+      <input type="text" ID="teamBBox" placeholder="Team B">
+      <div id="splash-start-text">click this to start:  <button type="button" ID="startButton" onclick="start(this), removeSplashScreen(this)">Start</button></div>
+    </div>
+
+    <div id="startWaitingScreen">
+      <div class="startWaitingScreenTimerText">
+        <p id="roundCounter"></p>
+        <div id="startWaitingScreenText"> (Team A) starting in:
+        </div>
+        <div ID="teamScreen_timer">
+          <div id="timer-screen">
+            00:05
+          </div>
+        </div>
+      </div>
+      <div id="quoteArea">
+        <p id="quote"></p>
+        <p id="author"></p>
+      </div>
+    </div>
+
+    <div id="pauseSplashScreen" class="hidden" style="opacity:0">
+      <div id="pauseScreenTextContainer">
+        <p id="roundCounterPause"></p>
+        <div id="pauseScreenText"> (Team B) starting in:
+        </div>
+        <div ID="teamScreen_timer">
+          <div id="timer-screen2">
+            00:05
+          </div>
+        </div>
+      </div>
+      <div id="quoteAreaPause">
+        <p id="quotePause"></p>
+        <p id="authorPause"></p>
+    </div>
+  </div>
+
+    <div id="endScreen" class="hidden" style="opacity:0">
+      <div id="endScreenText"> <p id="congratulations">Congratulations (TEAM)</p>
+      </div>
+      <div ID="pointsSummary">
+        <p id="teamAPointsSummary"></p>
+        <p id="teamBPointsSummary"></p>
+      </div>
+      <div id="thankyouSection">
+        <p>Hosts: Mrs. J Smith and Mrs. Webb</p>
+        <p>Game created by Abril Insaurralde</p>
+      </div>
+      <img id="americaSaysLogoEndScreen" src="America Says Logo.png" alt="America Says Logo">
+      <img id="advisoryOlympicsLogo" src="Advisory Olympics draft logo.png" alt="Adivisory Olympics logo">
+    </div>
+    <!-- </div> -->
+
 
     <!-- ////////////////////////////////////// -->
     <script src = "question.js"> </script>
