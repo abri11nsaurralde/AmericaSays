@@ -7,8 +7,8 @@
      font-family: 'truenoextrabold_italic';
      /* src: url('/https://abri11nsaurralde.github.io/AmericaSays/css/fonts/truenoexbdit.woff2') format('woff2'),
           url('/https://abri11nsaurralde.github.io/AmericaSays/css/fonts/truenoexbdit.woff') format('woff'); */
-    src: url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno extra bold italic/truenoexbdit.woff2') format('woff2'),
-         url('/Users/abri11nsaurralde/Documents/GitHub/AmericaSays/trueno extra bold italic/truenoexbdit.woff') format('woff');
+    src: url('trueno extra bold italic/truenoexbdit.woff2') format('woff2'),
+         url('trueno extra bold italic/truenoexbdit.woff') format('woff');
      /* font-weight: normal;
      font-style: normal; */
 
