@@ -24,8 +24,34 @@
  }
 
 body {
-    background: rgba(55,98,236,255);
-    padding: 50px 20px;
+  background: rgba(55,98,236,255);
+  padding: 50px 20px;
+  margin-right: 320px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#startScreenAmericaSaysLogo {
+  width: 40vw;
+  position: absolute;
+  top: 40px;
+  left: -10px;
+}
+
+#hostText {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 90px;
+  margin-top: 0;
+  margin-left: 440px;
+  margin-right: 0%;
+  /* justify-items: right; */
+  text-align: end;
+  /* width: auto; */
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  color: #f5eeee;
 }
 
 .sidebar {
@@ -46,9 +72,7 @@ body {
     margin-left: auto;
     margin-right: auto;
   width: 320px;
-}
-.main {
-  margin-right: 320px;
+  padding-top: 20px;
 }
 
 #question {
@@ -67,51 +91,350 @@ body {
   border-color: rgba(255,255,59,255);
 }
 
-input {
+#answerBox {
   background-color: rgba(222,30,55,0);
   border-color: transparent transparent rgba(255,255,255,0.8) transparent;
   font-size: 30px;
   color: rgba(255,255,255,0.8);
+  position: absolute;
+    top: 90vh;
+    left: 3vw;
+}
+
+#answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 70px;
 }
 
 #answers * {
  color: white;
- /* font-family: "TT Norms Pro", sans-serif; */
  font-family: 'truenoextrabold_italic';
- /* font-weight: 900; */
  font-size: 50px;
  text-shadow: 0px 2px 2px DimGrey;
  text-transform: uppercase;
  margin-left: 40px;
  margin-right: 50px;
+ padding-bottom: 70px;
+}
+
+#teamABox::placeholder, #teamBBox::placeholder {
+  opacity: 1;
+  color: rgba(255,255,255,0.8);
+  font-size: 50px;
 
 }
 
-
-::placeholder {
+#answerBox::placeholder {
   opacity: 1;
   color: rgba(255,255,255,0.8);
+  /* font-size: 50px; */
 }
 
 #startButton {
+  cursor : pointer;
   font-family: 'truenoextrabold_italic';
   font-style: normal;
-  font-size: 20px;
+  font-size: 40px;
   color: white;
   background-color: rgba(255,255,255,0.2);
   border-color: transparent;
   border-radius: 10px;
 }
 
-#js_timer {
+#main_timer {
   font-family: 'truenoextrabold_italic';
   font-style: normal;
   font-size: 50px;
   color: rgba(255,255,59,255);
   display: block;
   text-align: center;
+  padding-top: 40px;
+}
+
+#endButton {
+  position: absolute;
+    margin-left: 63%;
+    cursor: pointer;
+    font-family: 'truenoextrabold_italic';
+    font-style: normal;
+    font-size: 25px;
+    color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.15);
+    border-color: transparent;
+    border-radius: 10px;
 }
 
 head {
   padding: 50px 20px;
+}
+
+#pointsTitle {
+  color: white;
+    font-family: 'truenoextrabold_italic';
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+#teamAPointsLine, #teamBPointsLine {
+  color: white;
+  font-family: 'truenoextrabold_italic';
+  text-align: center;
+  font-size: 40px;
+}
+
+/* splash */
+
+#startSplashScreen{ /* parent main start screen */
+  position: fixed;
+  top : 50%;
+  left: 50%;
+  height: 100%;
+  width : 100%;
+  transform: translate(-50%, -50%);
+  background-color: #5f81f0;
+  transition : all ease-in-out 600ms;
+  z-index: 2;
+}
+
+#splash-start-text {
+  color: #fde648;
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  font-size: 50px;
+  position: absolute;
+  top: 75vh;
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+}
+
+#startWaitingScreen, #pauseSplashScreen {
+  position: fixed;
+  top : 50%;
+  left: 50%;
+  height: 100%;
+  width : 100%;
+  transform: translate(-50%, -50%);
+  background-color: #5f81f0;
+  transition : all ease-in-out 600ms;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  align-items: center;
+}
+
+.startWaitingScreenTimerText, #pauseScreenTextContainer {
+  grid-column-start: 1;
+}
+
+#roundCounter, #roundCounterPause {
+
+}
+
+#quoteArea, #quoteAreaPause {
+  grid-column-start: 3;
+  color: #ffd0d0;
+  font-family: 'truenoextrabold_italic';
+  font-size: 60px;
+  justify-content: left;
+  padding-left: 40px;
+  align-items: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 40px;
+}
+
+#startWaitingScreenText, #pauseScreenText,  #roundCounter, #roundCounterPause { /* parent start screen to start the first team */
+  color: white;
+  font-family: 'truenoextrabold_italic';
+  font-size: 110px;
+  grid-column-start: 1;
+  justify-content: left;
+  padding-left: 40px;
+  align-items: center;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#roundCounter, #roundCounterPause {
+  padding-bottom: 60px;
+}
+
+#teamScreen_timer {
+  font-family: 'truenoextrabold_italic';
+    font-style: normal;
+    font-size: 160px;
+    color: rgba(255,255,59,255);
+    padding-left: 40px;
+}
+
+#endScreen {
+  position: fixed;
+  top : 50%;
+  left: 50%;
+  height: 100%;
+  width : 100%;
+  transform: translate(-50%, -50%);
+  background-color: #0502b3;
+  transition : all ease-in-out 100ms;
+  z-index: 1;
+}
+
+#endScreenText {
+  color: yellow;
+  font-family: 'truenoextrabold_italic';
+  font-size: 60px;
+  text-align: center;
+  text-decoration: #5f81f0 wavy underline;
+}
+
+#teamAPointsSummary, #teamBPointsSummary {
+  color: white;
+  font-family: 'truenoextrabold_italic';
+  font-size: 50px;
+  text-align: center;
+}
+
+#americaSaysLogoEndScreen {
+  margin-left: 120px;
+  margin-top: 50px;
+  width: 300px;
+}
+
+#advisoryOlympicsLogo {
+  height: 150px;
+  padding-bottom: 20px;
+}
+
+#thankyouSection {
+  color: white;
+    font-family: 'truenoextrabold_italic';
+    font-size: 40px;
+    text-align: center;
+}
+
+.hidden{
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+#teamABox, #teamBBox{
+  background-color: rgba(222,30,55,0);
+    border-color: rgba(255,255,255,0.8);
+    border-width: 3.5px;
+    border-style: solid;
+    font-size: 50px;
+    color: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 60vh;
+    height: 60px;
+    padding-top: 10px;
+    /* padding-left: 10px; */
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+}
+
+input#teamABox {
+    right: 60%;
+}
+
+input#teamBBox {
+    left: 60%;
+}
+
+//endButton
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 800px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  font-family: 'truenoextrabold_italic';
+  font-size: 40px;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'truenoextrabold_italic';
+  font-size: 40px;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+  font-family: 'truenoextrabold_italic';
+    font-size: 30px;
+    color: black;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#no-button {
+  background-color: #df1e39;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  font-family: 'truenoextrabold_italic';
+    font-size: 30px;
+    color: black;
+    border-radius: 10px;
+}
+
+#yes-button {
+  margin-left: 30px;
+  font-family: 'truenoextrabold_italic';
+    font-size: 30px;
+    color: black;
+    border-radius: 10px;
 }
