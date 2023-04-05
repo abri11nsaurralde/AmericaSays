@@ -154,15 +154,16 @@ body {
 
 #endButton {
   position: absolute;
-    margin-left: 63%;
-    cursor: pointer;
-    font-family: 'truenoextrabold_italic';
-    font-style: normal;
-    font-size: 25px;
-    color: rgba(255,255,255,0.5);
-    background-color: rgba(255,255,255,0.15);
-    border-color: transparent;
-    border-radius: 10px;
+  cursor: pointer;
+  font-family: 'truenoextrabold_italic';
+  font-style: normal;
+  font-size: 25px;
+  color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.15);
+  border-color: transparent;
+  border-radius: 10px;
+  left: 925px;
+  bottom: 50px;
 }
 
 head {
@@ -419,6 +420,7 @@ input#teamBBox {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+  z-index: 3;
 }
 
 #no-button {
